@@ -1,7 +1,18 @@
 package mod.culegooner;
 
+import java.util.Random;
+
+import net.minecraft.entity.EntityList;
+import net.minecraft.entity.monster.EntitySkeleton;
+import net.minecraft.entity.monster.IMob;
+import net.minecraft.entity.passive.IAnimals;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityArrow;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.ForgeSubscribe;
-import net.minecraftforge.event.entity.living.LivingSpawnEvent;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
+
 
 
 
@@ -9,15 +20,26 @@ public class EntityLivingHandler {
 
 	@ForgeSubscribe
     public void onEntityLivingDeath(LivingDeathEvent event) {
-    	FMLLog.info("WOOOHOOO onEntityLivingDeath", null);
-        if (event.source.getDamageType().equals("player")) {
-            //ItemUtil.dropMiniumShard((EntityPlayer) event.source.getSourceOfDamage(), event.entityLiving);
-        	 if (event.entityLiving instanceof IMob)
+	   	if (event.source.getDamageType().equals("player")) {
+          if ((event.entityLiving instanceof IAnimals)|| (event.entityLiving instanceof IMob))
         	 {
-        		 if (event.entityLiving instanceof EntitySkeleton){
+        		 //if (event.entityLiving instanceof EntitySkeleton){
         			 double rand = Math.random();
         	            rand = 0.0d;
        	            
+        	            
+        	            
+        	            int id = EntityList.getEntityID(event.entityLiving);
+        	            System.out.println("*********** onEntityLivingDeath entityID: " + id);
+        	            if (id > 0 && EntityList.entityEggs.containsKey(id))
+        	            {
+        	                ItemStack dropEgg = new ItemStack(Item.monsterPlacer, 1, id);
+        	            	event.entityLiving.entityDropItem(dropEgg, 0.0F);
+        	            }
+        	            
+        	            
+        	            
+        	            /*
         	            if (rand < 0.15d) {
         	            	Random rnd = new Random();
         	            	
@@ -34,20 +56,31 @@ public class EntityLivingHandler {
         	                }
         	            	
         	            }
+        	            */
         		 }
         			 
         	 }
         	 
-        }
+        //}
         if (event.source.getSourceOfDamage() instanceof EntityArrow) {
             if (((EntityArrow) event.source.getSourceOfDamage()).shootingEntity != null) {
                 if (((EntityArrow) event.source.getSourceOfDamage()).shootingEntity instanceof EntityPlayer) {
-                	if (event.entityLiving instanceof IMob)
+                	if ((event.entityLiving instanceof IAnimals)|| (event.entityLiving instanceof IMob))
                	 {
-                		if (event.entityLiving instanceof EntitySkeleton){
+                		//if (event.entityLiving instanceof EntitySkeleton){
                			 double rand = Math.random();
                	            rand = 0.0d;
               	            
+               	         
+            	            int id = EntityList.getEntityID(event.entityLiving);
+            	            System.out.println("*********** onEntityLivingDeath entityID: " + id);
+            	            if (id > 0 && EntityList.entityEggs.containsKey(id))
+            	            {
+            	                ItemStack dropEgg = new ItemStack(Item.monsterPlacer, 1, id);
+            	            	event.entityLiving.entityDropItem(dropEgg, 0.0F);
+            	            }
+            	            
+            	            /*
                	            if (rand < 0.15d) {
                	            	Random rnd = new Random();
                	            	
@@ -64,8 +97,8 @@ public class EntityLivingHandler {
                	                }
                	            	
                	            }
-               		 }
-               			 
+               	            */
+               		                			 
                	 }
                	 
                 }
