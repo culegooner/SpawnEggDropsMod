@@ -1,15 +1,12 @@
-package mod.culegooner;
+package mod.culegooner.SpawnEggDropsMod;
 
-import mod.culegooner.proxy.CommonProxy;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
-
 
 
 
@@ -19,13 +16,6 @@ import cpw.mods.fml.common.network.NetworkMod;
 
 public class SpawnEggDropsModBase {
 
-	
-	@SidedProxy(
-			clientSide = SpawnEggDropsModLib.CLIENT_PROXY_CLASS,
-			serverSide = SpawnEggDropsModLib.SERVER_PROXY_CLASS)
-	public static CommonProxy proxy;
-	
-	
 	
 	
 	@EventHandler

@@ -1,4 +1,4 @@
-package mod.culegooner;
+package mod.culegooner.SpawnEggDropsMod;
 
 public class SpawnEggDropsModLib {
 	  	public static final boolean DEBUG_MODE = false;
@@ -12,7 +12,7 @@ public class SpawnEggDropsModLib {
 	    public static final String FINGERPRINT = "@FINGERPRINT@";
 	    public static final int SECOND_IN_TICKS = 20;
 	    public static final int SHIFTED_ID_RANGE_CORRECTION = 256;
-	    public static final String SERVER_PROXY_CLASS = "mod.culegooner.proxy.CommonProxy";
-	    public static final String CLIENT_PROXY_CLASS = "mod.culegooner.proxy.ClientProxy";
+	    public static final String SERVER_PROXY_CLASS = "mod.culegooner.SpawnEggDropsMod.proxy.CommonProxy";
+	    public static final String CLIENT_PROXY_CLASS = "mod.culegooner.SpawnEggDropsMod.proxy.ClientProxy";
 	    public static final int VERSION_CHECK_ATTEMPTS = 3;
 }

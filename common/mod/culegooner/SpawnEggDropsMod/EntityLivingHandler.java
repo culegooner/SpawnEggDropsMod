@@ -1,9 +1,6 @@
-package mod.culegooner;
-
-import java.util.Random;
+package mod.culegooner.SpawnEggDropsMod;
 
 import net.minecraft.entity.EntityList;
-import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.passive.IAnimals;
 import net.minecraft.entity.player.EntityPlayer;
@@ -24,8 +21,8 @@ public class EntityLivingHandler {
           if ((event.entityLiving instanceof IAnimals)|| (event.entityLiving instanceof IMob))
         	 {
         		 //if (event.entityLiving instanceof EntitySkeleton){
-        			 double rand = Math.random();
-        	            rand = 0.0d;
+        			 //double rand = Math.random();
+        	          //  rand = 0.0d;
        	            
         	            
         	            
@@ -68,8 +65,8 @@ public class EntityLivingHandler {
                 	if ((event.entityLiving instanceof IAnimals)|| (event.entityLiving instanceof IMob))
                	 {
                 		//if (event.entityLiving instanceof EntitySkeleton){
-               			 double rand = Math.random();
-               	            rand = 0.0d;
+               			 //double rand = Math.random();
+               	            //rand = 0.0d;
               	            
                	         
             	            int id = EntityList.getEntityID(event.entityLiving);
