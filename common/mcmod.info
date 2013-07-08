@@ -3,8 +3,8 @@
   "modid": "SpawnEggDropsMod",
   "name": "SpawnEggDropsMod",
   "description": "SpawnEggDropsMod",
-  "version": "1.0.2",
-  "url": "",
+  "version": "@VERSION@",
+  "url": "https://github.com/culegooner/SpawnEggDropsMod",
   "updateUrl": "",
   "authorList": [
     "culegooner"

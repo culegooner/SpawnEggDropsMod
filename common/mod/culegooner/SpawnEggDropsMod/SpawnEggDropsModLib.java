@@ -6,7 +6,7 @@ public class SpawnEggDropsModLib {
 	    /* General Mod related constants */
 	    public static final String MOD_ID = "SpawnEggDropsMod";
 	    public static final String MOD_NAME = "SpawnEggDropsMod";
-	    public static final String VERSION_NUMBER = "@VERSION@ (build @BUILD_NUMBER@)";
+	    public static final String VERSION_NUMBER = "@VERSION@ b@BUILD_NUMBER@";
 	    public static final String CHANNEL_NAME = MOD_ID;
 	    public static final String DEPENDENCIES = "required-after:Forge@[8.9.0.762,)";
 	    public static final String FINGERPRINT = "@FINGERPRINT@";

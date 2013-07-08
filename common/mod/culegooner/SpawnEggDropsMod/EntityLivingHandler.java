@@ -24,7 +24,7 @@ public class EntityLivingHandler {
 						|| (event.entityLiving instanceof IMob)) {
 					double rand = Math.random();
 					//rand = 0.0d;
-					if (rand < 0.15d) {
+					if (rand < 0.25d) {
 						int id = EntityList.getEntityID(event.entityLiving);
 						if (id > 0 && EntityList.entityEggs.containsKey(id)) {
 							ItemStack dropEgg = new ItemStack(
@@ -50,7 +50,7 @@ public class EntityLivingHandler {
 							double rand = Math.random();
 							//rand = 0.0d;
 
-							if (rand < 0.15d) {
+							if (rand < 0.25d) {
 								int id = EntityList.getEntityID(event.entityLiving);
 								if (id > 0
 										&& EntityList.entityEggs.containsKey(id)) {
