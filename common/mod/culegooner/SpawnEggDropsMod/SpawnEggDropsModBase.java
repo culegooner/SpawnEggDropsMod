@@ -27,7 +27,7 @@ public class SpawnEggDropsModBase {
     public void modInit(FMLInitializationEvent event) {
      
         MinecraftForge.EVENT_BUS.register(new EntityLivingHandler());
-        LanguageRegistry.instance().addStringLocalization("enchantment.espawndrop", "Drop Spawn");    	
+        LanguageRegistry.instance().addStringLocalization("enchantment.espawndrop", "Drop Egg");    	
     }
     
 	@EventHandler
