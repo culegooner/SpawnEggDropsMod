@@ -1,30 +1,32 @@
-package mod.culegooner.SpawnEggDropsMod;
+package mod.culegooner.SpawnEggDropsMod.Events;
 
+import mod.culegooner.SpawnEggDropsMod.ModMain;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.passive.IAnimals;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 
-public class EntityLivingHandler {
+public class SpawnEggDropHandler {
 
+	//algorithm by Pahimar
+	
 	@ForgeSubscribe
 	public void onEntityLivingDeath(LivingDeathEvent event) {
 		if (event.source.getDamageType().equals("player")) {
 			EntityPlayer p = (EntityPlayer) event.source.getEntity();
 
-			if (EnchantmentHelper.getEnchantmentLevel(SpawnEggDropsModBase.eSpawnDrop.effectId, p.getHeldItem()) == 1) {
+			if (EnchantmentHelper.getEnchantmentLevel(ModMain.eSpawnEggDrop.effectId, p.getHeldItem()) == 1) {
 				if ((event.entityLiving instanceof IAnimals)
 						|| (event.entityLiving instanceof IMob)) {
 					double rand = Math.random();
 					//rand = 0.0d;
-					if (rand < 0.25d) {
+					if (rand < HandlersInit.EGGDROPCHANCE) {
 						int id = EntityList.getEntityID(event.entityLiving);
 						if (id > 0 && EntityList.entityEggs.containsKey(id)) {
 							ItemStack dropEgg = new ItemStack(
@@ -44,13 +46,13 @@ public class EntityLivingHandler {
 
 					EntityPlayer p = (EntityPlayer) event.source.getEntity();
 					
-					if (EnchantmentHelper.getEnchantmentLevel(SpawnEggDropsModBase.eSpawnDrop.effectId, p.getHeldItem()) == 1) {
+					if (EnchantmentHelper.getEnchantmentLevel(ModMain.eSpawnEggDrop.effectId, p.getHeldItem()) == 1) {
 						if ((event.entityLiving instanceof IAnimals)
 								|| (event.entityLiving instanceof IMob)) {
 							double rand = Math.random();
 							//rand = 0.0d;
 
-							if (rand < 0.25d) {
+							if (rand < HandlersInit.EGGDROPCHANCE) {
 								int id = EntityList.getEntityID(event.entityLiving);
 								if (id > 0
 										&& EntityList.entityEggs.containsKey(id)) {
