@@ -15,22 +15,25 @@ public class EnchantmentSpawnEggDrop extends Enchantment {
 	  /**
      * Returns the minimal value of enchantability needed on the enchantment level passed.
      */
+	@Override
     public int getMinEnchantability(int par1)
     {
-        return 20;
+        return 1;
     }
 
     /**
      * Returns the maximum value of enchantability nedded on the enchantment level passed.
      */
+    @Override
     public int getMaxEnchantability(int par1)
     {
-        return 50;
+        return this.getMinEnchantability(par1) + 40;
     }
 
     /**
      * Returns the maximum level that the enchantment can have.
      */
+    @Override
     public int getMaxLevel()
     {
         return 1;
